@@ -1,4 +1,4 @@
-class Diapers extends ChildGoods{
+public class Diapers extends ChildGoods{
     Integer size;
     Integer minWeight;
     Integer maxWeight;
@@ -87,4 +87,18 @@ class Diapers extends ChildGoods{
         this.maxWeight = maxWeight;
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Diapers{" +
+                "size=" + size +
+                ", minWeight=" + minWeight +
+                ", maxWeight=" + maxWeight +
+                ", type='" + type + '\'' +
+                ", minAge=" + minAge +
+                ", hypoallergenic=" + hypoallergenic +
+                "} " + super.toString();
+    }
 }
+
+

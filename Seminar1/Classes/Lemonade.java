@@ -1,4 +1,4 @@
-class Lemonade extends Drink{
+public class Lemonade extends Drink{
     public Lemonade(String name, String unit, Float volumeInLitres) {
         super(name, unit, volumeInLitres);
     }
@@ -9,5 +9,12 @@ class Lemonade extends Drink{
 
     public Lemonade(String name, Float price, Integer amount, String unit, Float volumeInLitres) {
         super(name, price, amount, unit, volumeInLitres);
+    }
+
+    @Override
+    public String toString() {
+        return "Lemonade{" +
+                "volumeInLitres=" + volumeInLitres +
+                "} " + super.toString();
     }
 }

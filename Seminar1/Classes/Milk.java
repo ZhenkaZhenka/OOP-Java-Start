@@ -1,4 +1,4 @@
-class Milk extends Drink{
+public class Milk extends Drink{
     Float fatContent;
     Integer expiredInDays;
 
@@ -48,5 +48,14 @@ class Milk extends Drink{
     public Milk(String name, Float price, Integer amount, String unit, Float volumeInLitres, Integer expiredInDays) {
         super(name, price, amount, unit, volumeInLitres);
         this.expiredInDays = expiredInDays;
+    }
+
+    @Override
+    public String toString() {
+        return "Milk{" +
+                "fatContent=" + fatContent +
+                ", expiredInDays=" + expiredInDays +
+                ", volumeInLitres=" + volumeInLitres +
+                "} " + super.toString();
     }
 }

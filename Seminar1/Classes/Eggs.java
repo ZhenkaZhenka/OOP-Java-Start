@@ -15,4 +15,12 @@ public class Eggs extends Food{
         super(name, price, amount, unit, expiredInDays);
         this.amountInPack = amountInPack;
     }
+
+    @Override
+    public String toString() {
+        return "Eggs{" +
+                "amountInPack=" + amountInPack +
+                ", expiredInDays=" + expiredInDays +
+                "} " + super.toString();
+    }
 }

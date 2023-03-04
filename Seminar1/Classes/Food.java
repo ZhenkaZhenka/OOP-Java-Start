@@ -1,4 +1,4 @@
-class Food extends Goods {
+public class Food extends Goods {
     Integer expiredInDays;
 
     public Food(String name, String unit, Integer expiredInDays) {
@@ -14,5 +14,12 @@ class Food extends Goods {
     public Food(String name, Float price, Integer amount, String unit, Integer expiredInDays) {
         super(name, price, amount, unit);
         this.expiredInDays = expiredInDays;
+    }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "expiredInDays=" + expiredInDays +
+                "} " + super.toString();
     }
 }

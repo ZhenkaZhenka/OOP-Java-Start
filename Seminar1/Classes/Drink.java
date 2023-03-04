@@ -1,4 +1,4 @@
-class Drink extends Goods {
+public class Drink extends Goods {
     Float volumeInLitres;
 
     public Drink(String name, String unit, Float volumeInLitres) {
@@ -16,4 +16,10 @@ class Drink extends Goods {
         this.volumeInLitres = volumeInLitres;
     }
 
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "volumeInLitres=" + volumeInLitres +
+                "} " + super.toString();
+    }
 }

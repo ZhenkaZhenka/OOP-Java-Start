@@ -1,4 +1,4 @@
-class Goods{
+public class Goods{
     private String name;
     private Float price ;
     private Integer amount;

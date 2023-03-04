@@ -1,4 +1,4 @@
-class ChildGoods extends Goods {
+public class ChildGoods extends Goods {
     Integer minAge;
     boolean hypoallergenic;
 
@@ -33,5 +33,13 @@ class ChildGoods extends Goods {
         super(name, price, amount, unit);
         this.minAge = minAge;
         this.hypoallergenic = hypoallergenic;
+    }
+
+    @Override
+    public String toString() {
+        return "ChildGoods{" +
+                "minAge=" + minAge +
+                ", hypoallergenic=" + hypoallergenic +
+                "} " + super.toString();
     }
 }

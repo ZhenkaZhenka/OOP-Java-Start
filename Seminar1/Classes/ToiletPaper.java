@@ -15,4 +15,12 @@ public class ToiletPaper extends Hygiene{
         super(name, price, amount, unit, amountInPack);
         this.layers = layers;
     }
+
+    @Override
+    public String toString() {
+        return "ToiletPaper{" +
+                "layers=" + layers +
+                ", amountInPack=" + amountInPack +
+                "} " + super.toString();
+    }
 }
