@@ -88,16 +88,47 @@ public class Diapers extends ChildGoods{
         this.type = type;
     }
 
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Integer getMinWeight() {
+        return minWeight;
+    }
+
+    public void setMinWeight(Integer minWeight) {
+        this.minWeight = minWeight;
+    }
+
+    public Integer getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(Integer maxWeight) {
+        this.maxWeight = maxWeight;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
-        return "Diapers{" +
+        return super.toString() +
                 "size=" + size +
                 ", minWeight=" + minWeight +
                 ", maxWeight=" + maxWeight +
                 ", type='" + type + '\'' +
                 ", minAge=" + minAge +
-                ", hypoallergenic=" + hypoallergenic +
-                "} " + super.toString();
+                ", hypoallergenic=" + hypoallergenic;
     }
 }
 

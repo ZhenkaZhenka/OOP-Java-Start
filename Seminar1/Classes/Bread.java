@@ -16,11 +16,18 @@ public class Bread extends Food {
         this.flour = flour;
     }
 
+    public String getFlour() {
+        return flour;
+    }
+
+    public void setFlour(String flour) {
+        this.flour = flour;
+    }
+
     @Override
     public String toString() {
-        return "Bread{" +
+        return super.toString() +
                 "flour='" + flour + '\'' +
-                ", expiredInDays=" + expiredInDays +
-                "} " + super.toString();
+                ", expiredInDays=" + expiredInDays;
     }
 }

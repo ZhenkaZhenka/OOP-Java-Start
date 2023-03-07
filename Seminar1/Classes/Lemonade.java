@@ -13,8 +13,7 @@ public class Lemonade extends Drink{
 
     @Override
     public String toString() {
-        return "Lemonade{" +
-                "volumeInLitres=" + volumeInLitres +
-                "} " + super.toString();
+        return super.toString() +
+                "volumeInLitres=" + volumeInLitres;
     }
 }

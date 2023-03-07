@@ -1,5 +1,5 @@
 public class Eggs extends Food{
-    Integer amountInPack;
+    Integer amountInPack = 0;
 
     public Eggs(String name, String unit, Integer expiredInDays, Integer amountInPack) {
         super(name, unit, expiredInDays);
@@ -16,11 +16,18 @@ public class Eggs extends Food{
         this.amountInPack = amountInPack;
     }
 
+    public Integer getAmountInPack() {
+        return amountInPack;
+    }
+
+    public void setAmountInPack(Integer amountInPack) {
+        this.amountInPack = amountInPack;
+    }
+
     @Override
     public String toString() {
-        return "Eggs{" +
+        return super.toString() +
                 "amountInPack=" + amountInPack +
-                ", expiredInDays=" + expiredInDays +
-                "} " + super.toString();
+                ", expiredInDays=" + expiredInDays;
     }
 }

@@ -1,6 +1,6 @@
 public class Milk extends Drink{
-    Float fatContent;
-    Integer expiredInDays;
+    Float fatContent = 0F;
+    Integer expiredInDays = 0;
 
     public Milk(String name, String unit, Float volumeInLitres, Float fatContent, Integer expiredInDays) {
         super(name, unit, volumeInLitres);
@@ -20,42 +20,27 @@ public class Milk extends Drink{
         this.expiredInDays = expiredInDays;
     }
 
-    public Milk(String name, String unit, Float volumeInLitres, Float fatContent) {
-        super(name, unit, volumeInLitres);
+    public Float getFatContent() {
+        return fatContent;
+    }
+
+    public void setFatContent(Float fatContent) {
         this.fatContent = fatContent;
     }
 
-    public Milk(String name, Integer amount, String unit, Float volumeInLitres, Float fatContent) {
-        super(name, amount, unit, volumeInLitres);
-        this.fatContent = fatContent;
+    public Integer getExpiredInDays() {
+        return expiredInDays;
     }
 
-    public Milk(String name, Float price, Integer amount, String unit, Float volumeInLitres, Float fatContent) {
-        super(name, price, amount, unit, volumeInLitres);
-        this.fatContent = fatContent;
-    }
-
-    public Milk(String name, String unit, Float volumeInLitres, Integer expiredInDays) {
-        super(name, unit, volumeInLitres);
-        this.expiredInDays = expiredInDays;
-    }
-
-    public Milk(String name, Integer amount, String unit, Float volumeInLitres, Integer expiredInDays) {
-        super(name, amount, unit, volumeInLitres);
-        this.expiredInDays = expiredInDays;
-    }
-
-    public Milk(String name, Float price, Integer amount, String unit, Float volumeInLitres, Integer expiredInDays) {
-        super(name, price, amount, unit, volumeInLitres);
+    public void setExpiredInDays(Integer expiredInDays) {
         this.expiredInDays = expiredInDays;
     }
 
     @Override
     public String toString() {
-        return "Milk{" +
+        return super.toString() +
                 "fatContent=" + fatContent +
                 ", expiredInDays=" + expiredInDays +
-                ", volumeInLitres=" + volumeInLitres +
-                "} " + super.toString();
+                ", volumeInLitres=" + volumeInLitres;
     }
 }

@@ -11,6 +11,7 @@ public class Masks extends Hygiene{
         super(name, price, amount, unit, amountInPack);
     }
 
+
     @Override
     public String toString() {
         return "Masks{" +
@@ -21,4 +22,4 @@ public class Masks extends Hygiene{
 
 
     }
-}
+

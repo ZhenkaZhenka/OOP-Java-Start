@@ -16,11 +16,18 @@ public class ToiletPaper extends Hygiene{
         this.layers = layers;
     }
 
+    public Integer getLayers() {
+        return layers;
+    }
+
+    public void setLayers(Integer layers) {
+        this.layers = layers;
+    }
+
     @Override
     public String toString() {
-        return "ToiletPaper{" +
+        return super.toString() +
                 "layers=" + layers +
-                ", amountInPack=" + amountInPack +
-                "} " + super.toString();
+                ", amountInPack=" + amountInPack;
     }
 }

@@ -16,10 +16,21 @@ public class Food extends Goods {
         this.expiredInDays = expiredInDays;
     }
 
+    public Integer getExpiredInDays() {
+        return expiredInDays;
+    }
+
+    public void setExpiredInDays(Integer expiredInDays) {
+        this.expiredInDays = expiredInDays;
+    }
+
     @Override
     public String toString() {
-        return "Food{" +
-                "expiredInDays=" + expiredInDays +
-                "} " + super.toString();
+        return "Food " +
+                super.toString() +
+                " " +
+                "expiredInDays=" +
+                expiredInDays;
+
     }
 }

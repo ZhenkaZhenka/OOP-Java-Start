@@ -16,10 +16,17 @@ public class Drink extends Goods {
         this.volumeInLitres = volumeInLitres;
     }
 
+    public Float getVolumeInLitres() {
+        return volumeInLitres;
+    }
+
+    public void setVolumeInLitres(Float volumeInLitres) {
+        this.volumeInLitres = volumeInLitres;
+    }
+
     @Override
     public String toString() {
-        return "Drink{" +
-                "volumeInLitres=" + volumeInLitres +
-                "} " + super.toString();
+        return super.toString() + " " +
+                "volumeInLitres=" + volumeInLitres;
     }
 }

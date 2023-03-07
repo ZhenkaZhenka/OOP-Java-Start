@@ -1,7 +1,7 @@
 public class Goods{
     private String name;
-    private Float price ;
-    private Integer amount;
+    private Float price = 0.0F ;
+    private Integer amount = 0;
     private String unit;
 
     Goods(String name, String unit){
@@ -51,12 +51,11 @@ public class Goods{
 
     @Override
     public String toString() {
-        return "Goods{" +
-                "name='" + name + '\'' +
+        return "name='" + name + '\'' +
                 ", price=" + price +
                 ", amount=" + amount +
-                ", unit='" + unit + '\'' +
-                '}';
+                ", unit='" + unit + '\'';
+
     }
 }
 

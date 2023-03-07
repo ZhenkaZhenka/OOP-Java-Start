@@ -35,11 +35,28 @@ public class ChildGoods extends Goods {
         this.hypoallergenic = hypoallergenic;
     }
 
+    public Integer getMinAge() {
+        return minAge;
+    }
+
+    public void setMinAge(Integer minAge) {
+        this.minAge = minAge;
+    }
+
+    public boolean isHypoallergenic() {
+        return hypoallergenic;
+    }
+
+    public void setHypoallergenic(boolean hypoallergenic) {
+        this.hypoallergenic = hypoallergenic;
+    }
+
     @Override
     public String toString() {
-        return "ChildGoods{" +
+        return super.toString() +
+                " " +
                 "minAge=" + minAge +
-                ", hypoallergenic=" + hypoallergenic +
-                "} " + super.toString();
+                ", hypoallergenic=" + hypoallergenic;
+
     }
 }

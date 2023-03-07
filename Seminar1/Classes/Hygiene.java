@@ -16,10 +16,17 @@ public class Hygiene extends Goods {
         this.amountInPack = amountInPack;
     }
 
+    public Integer getAmountInPack() {
+        return amountInPack;
+    }
+
+    public void setAmountInPack(Integer amountInPack) {
+        this.amountInPack = amountInPack;
+    }
+
     @Override
     public String toString() {
-        return "Hygiene{" +
-                "amountInPack=" + amountInPack +
-                "} " + super.toString();
+        return super.toString() +
+                "amountInPack=" + amountInPack;
     }
 }
