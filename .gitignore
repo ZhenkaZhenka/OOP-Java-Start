@@ -44,6 +44,7 @@ out/
 *.iml
 *.ipr
 *.iws
+
 production/
 *.OOP Java
 
@@ -85,3 +86,5 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+/out/
+/.idea/
