@@ -45,6 +45,7 @@ out/
 *.ipr
 *.iws
 production/
+*.OOP Java
 
 ##############################
 ## Eclipse
