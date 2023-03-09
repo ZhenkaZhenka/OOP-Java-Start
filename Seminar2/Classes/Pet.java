@@ -7,6 +7,15 @@ public abstract class Pet extends Animal{
     String color;
     String dateOfBirth;
 
+    public Pet(Float height, Float weight, String colorOfEyes, String name, String breed, boolean injections, String color, String dateOfBirth) {
+        super(height, weight, colorOfEyes);
+        this.name = name;
+        this.breed = breed;
+        this.injections = injections;
+        this.color = color;
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public String getName() {
         return name;
     }

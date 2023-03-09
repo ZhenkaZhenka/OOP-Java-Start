@@ -6,6 +6,11 @@ public class Cat extends Pet implements Petable {
 
     boolean presenceOfWool;
 
+    public Cat(Float height, Float weight, String colorOfEyes, String name, String breed, boolean injections,
+               String color, String dateOfBirth, boolean presenceOfWool) {
+        super(height, weight, colorOfEyes, name, breed, injections, color, dateOfBirth);
+        this.presenceOfWool = presenceOfWool;
+    }
 
     @Override
     public void love() {

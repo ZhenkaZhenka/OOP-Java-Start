@@ -5,6 +5,11 @@ public abstract class Animal {
     Float weight;
     String colorOfEyes;
 
+    public Animal(Float height, Float weight, String colorOfEyes) {
+        this.height = height;
+        this.weight = weight;
+        this.colorOfEyes = colorOfEyes;
+    }
 
     public Float getHeight() {
         return height;

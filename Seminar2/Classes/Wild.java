@@ -4,6 +4,12 @@ public abstract class Wild extends Animal {
     String livingEnvironment;
     String dateOfFinding;
 
+    public Wild(Float height, Float weight, String colorOfEyes, String livingEnvironment, String dateOfFinding) {
+        super(height, weight, colorOfEyes);
+        this.livingEnvironment = livingEnvironment;
+        this.dateOfFinding = dateOfFinding;
+    }
+
     public String getLivingEnvironment() {
         return livingEnvironment;
     }
