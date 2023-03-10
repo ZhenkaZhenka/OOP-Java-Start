@@ -8,10 +8,6 @@ public abstract class Birds extends Animal{
         this.heightOfFlight = heightOfFlight;
     }
 
-    public Birds(Integer heightOfFlight) {
-        super();
-    }
-
     public void infoFlight(Integer heightOfFlight){
         System.out.println("Я лечу на высоте " + heightOfFlight + "m");
     }
