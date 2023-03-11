@@ -6,7 +6,7 @@ public class Chicken extends Birds{
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Ко-ко-ко");
     }
 
@@ -23,8 +23,8 @@ public class Chicken extends Birds{
         System.out.println("Курица летит на высоте " +  heightOfFlight + " m");
     }
 
-    public Chicken getChicken(){
-        return new Chicken(getFloat("Введите рост курицы(десятичное число): "),
+    public static Chicken getChicken(){
+        return new Chicken(getFloat("Введите рост курицы(десятичное число) в см: "),
                             getFloat("Введите вес курицы(десятичное число): "),
                             getString("Введите цвет глаз курицы(да-да, ее цвет глаз-это важно): "),
                             getInteger("Введите высоту полета курицы: ")

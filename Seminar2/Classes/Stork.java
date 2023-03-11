@@ -9,7 +9,7 @@ public class Stork extends Birds implements Flyable {
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Что-то прокричал как аист");
     }
 
@@ -25,7 +25,7 @@ public class Stork extends Birds implements Flyable {
         System.out.println("Аист летает на высоте " + heightOfFlight + "m");
     }
 
-    public Stork getStork(){
+    public static Stork getStork(){
         return new Stork(getFloat("Введите рост аиста(десятичное число): "),
                         getFloat("Введите вес аиста(десятичное число): "),
                         getString("Введите цвет глаз аиста(да-да, ее цвет глаз-это важно): "),

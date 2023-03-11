@@ -26,7 +26,7 @@ public class Cat extends Pet implements Petable {
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Котик сказал МЯУ");
     }
 
@@ -44,7 +44,7 @@ public class Cat extends Pet implements Petable {
                 ", presenceOfWool=" + presenceOfWool +
                 super.toString();
     }
-    public Cat getCat(){
+    public static Cat getCat(){
         return new Cat(getString("Введите имя котику: "),
                         getString("Введите породу котика: "),
                         getBoolean("Привит ли котик, введите true(да)/false(нет)"),
@@ -52,7 +52,7 @@ public class Cat extends Pet implements Petable {
                         getString("Введите дату рождения котика в формате дд/мм/гггг"),
                         getBoolean("Этот котик имеет шерсть? напишите true(да)/false(нет)"),
                         getFloat("Введите вес котика(десятичное число): "),
-                        getFloat("Введите рост кота от пола до кончика ушей(десятичное число): "),
+                        getFloat("Введите рост кота от пола до кончика ушей(десятичное число) в см: "),
                         getString("Введите цвет глаз котика: ")
                         );
     }

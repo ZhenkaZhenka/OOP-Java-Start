@@ -6,7 +6,7 @@ public class Tiger extends Wild{
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Рык, как тигр рычит");
     }
 
@@ -20,12 +20,12 @@ public class Tiger extends Wild{
                 ", dateOfFinding='" + dateOfFinding;
     }
 
-    public Tiger getTiger() {
+    public static Tiger getTiger() {
         return new Tiger(getFloat("Введите вес тигра(десятичное число): "),
                             getFloat("Введите рост тигра от пола до кончика ушей(десятичное число): "),
                             getString("Введите цвет глаз тигра: "),
                             getString("Введите регион происхождения тигра: "),
-                            getString("Введите дату рождения пёселя в формате дд/мм/гггг")
+                            getString("Введите дату рождения тигра в формате дд/мм/гггг")
                             );
     }
 }

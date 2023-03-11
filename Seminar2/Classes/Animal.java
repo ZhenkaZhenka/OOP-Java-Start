@@ -1,7 +1,9 @@
 package Classes;
 
+import Interfaces.Animalable;
+
 import java.util.Scanner;
-public abstract class Animal {
+public abstract class Animal implements Animalable {
     Float height;
     Float weight;
     String colorOfEyes;
@@ -36,11 +38,7 @@ public abstract class Animal {
         this.colorOfEyes = colorOfEyes;
     }
 
-    abstract void voice();
-
-    abstract String info();
-
-    public final Float getFloat(String message){
+    public static final Float getFloat(String message){
             Scanner scan = new Scanner(System.in);
             System.out.print(message);
             try {
@@ -53,7 +51,7 @@ public abstract class Animal {
             }
     }
 
-    public final Integer getInteger(String message) {
+    public static final Integer getInteger(String message) {
         Scanner scan = new Scanner(System.in);
         System.out.print(message);
         try {
@@ -66,13 +64,13 @@ public abstract class Animal {
         }
     }
 
-    public final String getString(String message){
+    public static final String getString(String message){
         Scanner scan = new Scanner(System.in);
         System.out.print(message);
         return scan.toString();
     }
 
-    public final boolean getBoolean(String message){
+    public static final boolean getBoolean(String message){
         Scanner scan = new Scanner(System.in);
         System.out.print(message);
         try {
@@ -80,7 +78,7 @@ public abstract class Animal {
             scan.close();
             return number;
         } catch (Exception e) {
-            System.out.println("Input real number");
+            System.out.println("Input true or false");
             return getBoolean(message);
         }
     }

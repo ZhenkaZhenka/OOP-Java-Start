@@ -1,6 +1,8 @@
 package Classes;
 
-public class Dog extends Pet{
+import Interfaces.Trainable;
+
+public class Dog extends Pet implements Trainable {
     boolean trainable;
 
     public Dog(String name, String breed, boolean injections, String color, String dateOfBirth, boolean trainable,
@@ -22,7 +24,7 @@ public class Dog extends Pet{
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Гав-гав");
     }
 
@@ -40,7 +42,7 @@ public class Dog extends Pet{
                 ", trainable=" + trainable;
     }
 
-    public Dog getDog() {
+    public static Dog getDog() {
         return new Dog(getString("Введите имя пёселя: "),
                         getString("Введите породу пёселя: "),
                         getBoolean("Привит ли пёсель, введите true(да)/false(нет)"),
@@ -49,7 +51,7 @@ public class Dog extends Pet{
                         getBoolean("Этот пёсель поддается дрессировке? напишите true(да)/false(нет)"),
                         getFloat("Введите вес котика(десятичное число): "),
                         getFloat("Введите рост кота от пола до кончика ушей(десятичное число): "),
-                        getString("Введите цвет глаз котика: ")
+                        getString("Введите цвет глаз пёселя: ")
                         );
     }
 }

@@ -18,7 +18,7 @@ public class Wolf extends Wild{
     }
 
     @Override
-    void voice() {
+    public void voice() {
         System.out.println("Зарычал по-волчьи, потому-что злой как волк");
     }
 
@@ -33,12 +33,12 @@ public class Wolf extends Wild{
                 ", dateOfFinding='" + dateOfFinding;
     }
 
-    public Wolf getWolf() {
-        return new Wolf(getFloat("Введите вес тигра(десятичное число): "),
-                        getFloat("Введите рост тигра от пола до кончика ушей(десятичное число): "),
-                        getString("Введите цвет глаз тигра: "),
-                        getString("Введите регион происхождения тигра: "),
-                        getString("Введите дату рождения пёселя в формате дд/мм/гггг"),
+    public static Wolf getWolf() {
+        return new Wolf(getFloat("Введите рост волка(десятичное число): "),
+                        getFloat("Введите вес волка от пола до кончика ушей(десятичное число): "),
+                        getString("Введите цвет глаз волка: "),
+                        getString("Введите регион происхождения волка: "),
+                        getString("Введите дату рождения волка в формате дд/мм/гггг"),
                         getBoolean("Этот волк вожак стаи? Введите true(да)/false(нет)")
                         );
     }
