@@ -7,12 +7,12 @@ public class Chicken extends Birds{
 
     @Override
     public void voice() {
-        System.out.println("Ко-ко-ко");
+        System.out.println("Ко-ко-ко\n");
     }
 
     @Override
     public String info() {
-        return "Chicken" +
+        return "Chicken: " +
                 "height=" + height +
                 ", weight=" + weight +
                 ", colorOfEyes='" + colorOfEyes + '\'' +

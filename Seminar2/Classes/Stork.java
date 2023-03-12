@@ -10,12 +10,12 @@ public class Stork extends Birds implements Flyable {
 
     @Override
     public void voice() {
-        System.out.println("Что-то прокричал как аист");
+        System.out.println("Что-то прокричал как аист\n");
     }
 
     @Override
     public String info() {
-        return "Stork" +
+        return "Stork: " +
                 "height=" + height +
                 ", weight=" + weight +
                 ", colorOfEyes='" + colorOfEyes + '\'' +

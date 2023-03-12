@@ -25,12 +25,12 @@ public class Dog extends Pet implements Trainable {
 
     @Override
     public void voice() {
-        System.out.println("Гав-гав");
+        System.out.println("Гав-гав\n");
     }
 
     @Override
     public String info() {
-        return "Dog" +
+        return "Dog: " +
                 "name='" + name + '\'' +
                 ", breed='" + breed + '\'' +
                 ", injections=" + injections +

@@ -43,7 +43,6 @@ public abstract class Animal implements Animalable {
             System.out.print(message);
             try {
                 Float number = scan.nextFloat();
-                scan.close();
                 return number;
             } catch (Exception e) {
                 System.out.println("Input real number");
@@ -56,7 +55,6 @@ public abstract class Animal implements Animalable {
         System.out.print(message);
         try {
             int number = scan.nextInt();
-            scan.close();
             return number;
         } catch (Exception e) {
             System.out.println("Input integer number");
@@ -67,7 +65,9 @@ public abstract class Animal implements Animalable {
     public static final String getString(String message){
         Scanner scan = new Scanner(System.in);
         System.out.print(message);
-        return scan.toString();
+        String word = scan.nextLine();
+//        scan.close();
+        return word;
     }
 
     public static final boolean getBoolean(String message){
@@ -78,7 +78,7 @@ public abstract class Animal implements Animalable {
             scan.close();
             return number;
         } catch (Exception e) {
-            System.out.println("Input true or false");
+            System.out.println("Input true or false\n");
             return getBoolean(message);
         }
     }

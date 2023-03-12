@@ -27,12 +27,12 @@ public class Cat extends Pet implements Petable {
 
     @Override
     public void voice() {
-        System.out.println("Котик сказал МЯУ");
+        System.out.println("Котик сказал МЯУ\n");
     }
 
     @Override
     public String info() {
-        return "Cat" +
+        return "Cat: " +
                 "name='" + name + '\'' +
                 ", breed='" + breed + '\'' +
                 ", injections=" + injections +
@@ -41,8 +41,7 @@ public class Cat extends Pet implements Petable {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", colorOfEyes='" + colorOfEyes + '\'' +
-                ", presenceOfWool=" + presenceOfWool +
-                super.toString();
+                ", presenceOfWool=" + presenceOfWool;
     }
     public static Cat getCat(){
         return new Cat(getString("Введите имя котику: "),
