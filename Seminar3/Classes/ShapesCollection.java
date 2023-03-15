@@ -11,7 +11,8 @@ public class ShapesCollection {
                             "1. Круг\n" + 
                             "2. Треугольник\n" + 
                             "3. Квадрат\n" + 
-                            "4. Прямоугольник\n");
+                            "4. Прямоугольник\n" +
+                            "0. Если передумали добавлять фигуру");
         Integer number = getInteger("Введите номер фигуры: ");
         getShape(number);
     }
@@ -67,6 +68,8 @@ public class ShapesCollection {
             case 4:
                 Rectangle.getRectangle();
                 break;
+            case 0:
+                return;
             default:
                 System.out.println("Фигуры под таким номером нет, введите номер из списка\n");
                 add();
