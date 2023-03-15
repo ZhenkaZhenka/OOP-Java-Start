@@ -4,6 +4,8 @@ public class Circle extends Shape{
 
     Float radius = baseSide;
 
+    String name = "Circle R" + radius;
+
     public Float getRadius() {
         return radius;
     }
@@ -14,15 +16,19 @@ public class Circle extends Shape{
     }
 
     @Override
-    public Float square() {
+    public Float area() {
         return (float)(Math.PI * Math.pow(radius, 2));
     }
 
     @Override
     public String info() {
-        return "Circle " +
-                "radius =" + radius +
+        return name +
                 "length = " + perimeter() +
-                "square = " + square();
+                "area = " + area();
+    }
+    public static Circle getCircle(){
+        Circle circle = new Circle();
+        circle.setBaseSide(getFloat("Введите радиус круга(десятичное число): "));
+        return circle;
     }
 }

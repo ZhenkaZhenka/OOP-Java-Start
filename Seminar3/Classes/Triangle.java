@@ -3,10 +3,11 @@ package Classes;
 public class Triangle extends Shape{
     Float firstSide = baseSide;
     Float secondSide;
-    double angle;
+    Float angle;
     //Below theoreme of cosinus
     Float thirdSide = (float) Math.sqrt(firstSide * firstSide + secondSide * secondSide -
-            2* firstSide * secondSide * Math.cos(angle));
+            2* firstSide * secondSide * Math.cos((double)angle));
+    String name = "Triangle " + firstSide + "x" + secondSide + "x" + thirdSide;
 
     public Float getFirstSide() {
         return firstSide;
@@ -28,7 +29,7 @@ public class Triangle extends Shape{
         return angle;
     }
 
-    public void setAngle(double angle) {
+    public void setAngle(Float angle) {
         this.angle = angle;
     }
 
@@ -38,18 +39,23 @@ public class Triangle extends Shape{
     }
 
     @Override
-    public Float square() {
+    public Float area() {
         Float hp = perimeter()/2;// half of perimeter
         return (float)Math.sqrt((hp - firstSide)*(hp - secondSide)*(hp-thirdSide));
     }
 
     @Override
     public String info() {
-        return "Triangle " +
-                "first side =" + firstSide +
-                "second side = " + secondSide +
-                "third side = " + thirdSide +
+        return name +
                 "length = " + perimeter() +
-                "square = " + square();
+                "area = " + area();
+    }
+
+    public static Triangle getTriangle(){
+        Triangle trian = new Triangle();
+        trian.setBaseSide(getFloat("Введите сторону треугольника(десятичное число): "));
+        trian.setSecondSide(getFloat("Введите вторую сторону треугольника(десятичное число): "));
+        trian.setAngle(getFloat("Введите угол между двумя этими сторонами: "));
+        return trian;
     }
 }

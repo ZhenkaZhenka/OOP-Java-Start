@@ -1,7 +1,14 @@
 package Classes;
 
+import java.util.Scanner;
+
 public class Square extends Shape{
     Float side = baseSide;
+    String name = "Square " + side + "x" + side;
+
+    public Float getSide() {
+        return side;
+    }
 
     @Override
     public Float perimeter() {
@@ -9,16 +16,20 @@ public class Square extends Shape{
     }
 
     @Override
-    public Float square() {
+    public Float area() {
         return side * side;
     }
 
     @Override
     public String info() {
-        return "Square " +
-                "side =" + side +
+        return name +
                 "length = " + perimeter() +
-                "square = " + square();
+                "area = " + area();
     }
 
+    public static Square getSquare(){
+        Square square = new Square();
+        square.setBaseSide(getFloat("Введите сторону квадрата(десятичное число): "));
+        return square;
+    }
 }

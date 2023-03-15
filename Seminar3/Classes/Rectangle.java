@@ -3,8 +3,9 @@ package Classes;
 public class Rectangle extends Square{
     Float firstSide = side;
     Float secondSide;
+    String name = "Rectangle " + firstSide + "x" + secondSide;
 
-    public Float getFirstside() {
+    public Float getFirstSide() {
         return firstSide;
     }
 
@@ -22,15 +23,20 @@ public class Rectangle extends Square{
     }
 
     @Override
-    public Float square() {
+    public Float area() {
         return firstSide * secondSide;
     }
     @Override
     public String info() {
-        return "Rectangle " +
-                "first side = " + firstSide +
-                "second side = " + secondSide +
+        return name +
                 "length = " + perimeter() +
-                "square = " + square();
+                "square = " + area();
+    }
+
+    public static Rectangle getRectangle(){
+        Rectangle rect = new Rectangle();
+        rect.setBaseSide(getFloat("Введите сторону прямоугольника(десятичное число): "));
+        rect.setSecondSide(getFloat("Введите вторую сторону прямоугольника(десятичное число): "));
+        return rect;
     }
 }
