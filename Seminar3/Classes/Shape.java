@@ -14,6 +14,8 @@ public abstract class Shape {
         return baseSide;
     }
 
+    public abstract void setName();
+
     public void setBaseSide(Float baseSide) {
         this.baseSide = baseSide;
     }
@@ -40,5 +42,17 @@ public abstract class Shape {
         System.out.print(message);
         String word = scan.nextLine();
         return word;
+    }
+
+    public static final Integer getInteger(String message) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print(message);
+        try {
+            int number = scan.nextInt();
+            return number;
+        } catch (Exception e) {
+            System.out.println("Input integer number");
+            return getInteger(message);
+        }
     }
 }
