@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class ProgramShapes {
     public static void main(String[] args){
-        ArrayList<Shape> list = new ArrayList<>();
-        Start(list);
+        Start(new ShapesCollection());
     }
 
-    public static void Start(ArrayList<Shape> list){
+    public static void Start(ShapesCollection coll){
         boolean marker = true;
         while(marker) {
             System.out.println("Есть несколько варианов действий:\n" +
@@ -20,26 +19,26 @@ public class ProgramShapes {
                     "5. Отсортировать фигуры в списке по их площади\n" +
                     "0. Остановить работу программы");
             Integer number = Shape.getInteger("Введите номер действия из списка\n");
-            marker = getAction(number, list);
+            marker = getAction(number, coll);
         }
         System.out.println("Хорошего дня!");
     }
-    public static boolean getAction(Integer number, ArrayList<Shape> list){
+    public static boolean getAction(Integer number, ShapesCollection coll){
         switch (number){
             case 1:
-                ShapesCollection.add(list);
+                coll.add();
                 return true;
             case 2:
-                ShapesCollection.remove(list);
+                coll.remove();
                 return true;
             case 3:
-                ShapesCollection.infoOfAllShapes(list);
+                coll.infoOfAllShapes();
                 return true;
             case 4:
-                ShapesCollection.getChangeOfShape(list);
+                coll.getChangeOfShape();
                 return true;
             case 5:
-                ShapesCollection.SortOfCollection(list);
+                coll.SortOfCollection();
                 return true;
             case 0:
                 return false;
