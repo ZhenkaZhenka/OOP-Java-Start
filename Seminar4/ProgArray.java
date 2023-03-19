@@ -3,20 +3,20 @@ import java.util.ArrayList;
 public class ProgArray {
 
     public static void main(String[] args) throws Exception {
-        String[] col = {"fff","ytyyty","sfgdfg","jdhg","sgdfg333","xbsfsdfhrw"};
-        Array<Double> ar = new Array();
+        Long[] col = {4l,3l,2l,5l,5l,3l,3l,2l};
+        Array<Float> ar = new Array();
         ar.print();
-        ar.add(1.9);
-        ar.add(2.9);
-        ar.add(1.2);
-        ar.add(1.7);
-        ar.add(1.3);
+        ar.add(1.9F);
+        ar.add(2.9F);
+        
+        
+        
         ar.print();
-        Array<String> ar2 = new Array(col);
-        String temp = ar2.max();
+        Array<Long> ar2 = new Array(col);
+        Long temp = ar2.mult();
         System.out.println(temp);
-        Double num = ar.sum();
-        System.out.println(num);
+        Float num = ar.sum();
+        System.out.println("77" + num);
         ar.print();
 
         ar2.print();

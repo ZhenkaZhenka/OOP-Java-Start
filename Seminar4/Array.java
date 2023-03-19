@@ -96,7 +96,47 @@ public class Array<E> {
     protected <E> E valueOf(int index) {
         return (E) array[index];
     }
-
+    @SuppressWarnings("unchecked")
+    public <E extends Number> E sum(){
+        if(array instanceof Byte[] ||
+            array instanceof Short[] ||
+                array instanceof Boolean[]){
+            System.out.println("This array has too short type to calculate it sum, you shouldn't do it ;)");
+        }
+        if(array instanceof Integer[]){
+            return (E)Sum.sum((Integer[])array);
+        }
+        if(array instanceof Long[]){
+            return (E) Sum.sum((Long[])array);
+        }
+        if(array instanceof Double[]){
+            return (E) Sum.sum((Double[])array);
+        }
+        if(array instanceof Float[]){
+            return (E) Sum.sum((Float[])array);
+        }
+        return null;
+    }
+    public <E extends Number> E mult(){
+        if(array instanceof Byte[] ||
+                array instanceof Short[] ||
+                array instanceof Boolean[]){
+            System.out.println("This array has too short type to calculate it sum, you shouldn't do it ;)");
+        }
+        if(array instanceof Integer[]){
+            return (E)Multiplication.mult((Integer[])array);
+        }
+        if(array instanceof Long[]){
+            return (E) Multiplication.mult((Long[])array);
+        }
+        if(array instanceof Double[]){
+            return (E) Multiplication.mult((Double[])array);
+        }
+        if(array instanceof Float[]){
+            return (E) Multiplication.mult((Float[])array);
+        }
+        return null;
+    }
 }
 
 
