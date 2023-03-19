@@ -12,8 +12,7 @@ public class ProgArray {
         ar.add(1.9);
         ar.add(1.3);
         ar.print();
-        System.out.println(ar.size());
-        ar.delete(1.3);
+//        ar.delete(1.3);
         System.out.println(ar.size());
         ar.print();
         Array<Integer> ar2 = new Array(col);

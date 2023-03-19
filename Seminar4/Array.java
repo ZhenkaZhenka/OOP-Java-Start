@@ -1,11 +1,9 @@
 import java.util.Arrays;
 
 public class Array<E> {
-    protected E[] array;
+    private E[] array;
     private int size;
-
     private Object[] defaultEmptyArray = {};
-
     public Array(){
         array = (E[]) defaultEmptyArray;
     }
@@ -13,7 +11,6 @@ public class Array<E> {
         array = col;
         size = array.length;
     }
-
     public void add(E obj){
         int newSize = array.length +1 ;
         E[] newArray;
@@ -33,7 +30,6 @@ public class Array<E> {
         array = Arrays.copyOf(temp, newSize);
         size -= 1;
     }
-
     public void delete(E obj){
         for (int i = 0; i < array.length; i+=1) {
             if(array[i].equals(obj)){
@@ -43,9 +39,9 @@ public class Array<E> {
         }
     }
     public int size(){
-        return array.length;
+        return size;
     }
-    public int indexOf(E obj){
+    public <E> int indexOf(E obj){
         for (int i = 0; i < size; i++){
             if (array[i].equals(obj)){
                 return i;
@@ -53,7 +49,7 @@ public class Array<E> {
         }
         return -1;
     }
-    public boolean contain(E obj){
+    public <E> boolean contain(E obj){
         for (var item : array) {
             if (item.equals(obj)){return true;}
         }
@@ -64,6 +60,9 @@ public class Array<E> {
             System.out.print(item + " ");
         }
         System.out.println();
+    }
+    protected <E> E valueOf(int index){
+        return (E)array[index];
     }
 
 }
