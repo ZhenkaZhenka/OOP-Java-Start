@@ -12,12 +12,12 @@ public class ProgArray {
         ar.add(2.0);
         ar.add(3.0);
         ar.print();
-        ar.delete(3.0);
+//        ar.delete(3.0);
         Array<Integer> ar2 = new Array(col);
-        System.out.println(ar2.getClass());
-        Double temp = ar.valueOf(3);
-        System.out.println(temp.getClass());
-        Double num = ar.sum();
+//        System.out.println(ar2.getClass());
+        Double temp = ar.mult();
+        System.out.println(temp);
+        Integer num = ar2.mult();
         System.out.println(num);
         ar.print();
 

@@ -103,20 +103,20 @@ public class Array<E> {
                 array instanceof Boolean[]){
             System.out.println("This array has too short type to calculate it's sum, you shouldn't do it ;)");
         }
-        if(array instanceof Integer[]){
+        if(array[0] instanceof Integer){
             return (E)Sum.sumInt((Integer[])array);
         }
         else{System.out.println("It isn't a Integer type");}
-        if(array instanceof Long[]){
+        if(array[0] instanceof Long){
             return (E) Sum.sumLong((Long[])array);
         }
         else{System.out.println("It isn't a Long type");}
-        if(array instanceof Double[]){
-            return (E) Sum.sumDouble((Double[])array);
+        if(array[0] instanceof Double){
+            return (E) Sum.sumDouble(array);
         }
         else{System.out.println("It isn't a Double type");}
-        if(array instanceof Float[]){
-            return (E) Sum.sumFloat((Float[])array);
+        if(array[0] instanceof Float){
+            return (E) Sum.sumFloat(array);
         }
         else{System.out.println("It isn't a Float type");}
         return null;
@@ -128,16 +128,16 @@ public class Array<E> {
             System.out.println("This array has too short type to calculate it sum, you shouldn't do it ;)");
         }
         if(array instanceof Integer[]){
-            return (E)Multiplication.mult((Integer[])array);
+            return (E)Multiplication.multInt(array);
         }
         if(array instanceof Long[]){
-            return (E) Multiplication.mult((Long[])array);
+            return (E) Multiplication.multLong(array);
         }
-        if(array instanceof Double[]){
-            return (E) Multiplication.mult((Double[])array);
+        if(array[0] instanceof Double){
+            return (E) Multiplication.multDouble(array);
         }
-        if(array instanceof Float[]){
-            return (E) Multiplication.mult((Float[])array);
+        if(array[0] instanceof Float){
+            return (E) Multiplication.multFloat(array);
         }
         return null;
     }
