@@ -101,20 +101,24 @@ public class Array<E> {
         if(array instanceof Byte[] ||
             array instanceof Short[] ||
                 array instanceof Boolean[]){
-            System.out.println("This array has too short type to calculate it sum, you shouldn't do it ;)");
+            System.out.println("This array has too short type to calculate it's sum, you shouldn't do it ;)");
         }
         if(array instanceof Integer[]){
-            return (E)Sum.sum((Integer[])array);
+            return (E)Sum.sumInt((Integer[])array);
         }
+        else{System.out.println("It isn't a Integer type");}
         if(array instanceof Long[]){
-            return (E) Sum.sum((Long[])array);
+            return (E) Sum.sumLong((Long[])array);
         }
+        else{System.out.println("It isn't a Long type");}
         if(array instanceof Double[]){
-            return (E) Sum.sum((Double[])array);
+            return (E) Sum.sumDouble((Double[])array);
         }
+        else{System.out.println("It isn't a Double type");}
         if(array instanceof Float[]){
-            return (E) Sum.sum((Float[])array);
+            return (E) Sum.sumFloat((Float[])array);
         }
+        else{System.out.println("It isn't a Float type");}
         return null;
     }
     public <E extends Number> E mult(){

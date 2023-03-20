@@ -1,26 +1,29 @@
+import org.jetbrains.annotations.NotNull;
+
 public class Sum extends Array{
-    protected static Integer sum(Integer[] ar){
+    protected static Integer sumInt(Integer[] ar){
         Integer sum = ar[0];
         for (int i = 1; i < ar.length; i++) {
             sum += ar[i];
         }
         return sum;
     }
-    protected static Double sum(Double[] ar){
+
+    protected static Double sumDouble(@NotNull Double[] ar){
         Double sum = ar[0];
         for (int i = 1; i < ar.length; i++) {
             sum += ar[i];
         }
         return sum;
     }
-    protected static Long sum(Long[] ar){
+    protected static Long sumLong(Long[] ar){
         Long sum = ar[0];
         for (int i = 1; i < ar.length; i++) {
             sum += ar[i];
         }
         return sum;
     }
-    protected static Float sum(Float[] ar){
+    protected static Float sumFloat(Float[] ar){
         Float sum = ar[0];
         for (int i = 1; i < ar.length; i++) {
             sum += ar[i];
