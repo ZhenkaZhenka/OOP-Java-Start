@@ -1,6 +1,8 @@
+package Classes;
+
 import java.util.Arrays;
 
-public class Multiplication extends Array{
+public class MultOfArrayElements extends Array{
     protected static <E> Integer multInt(E[] ar){
         Integer[] temp = Arrays.copyOf(ar, ar.length,Integer[].class);
         Integer mult = temp[0];
@@ -9,7 +11,7 @@ public class Multiplication extends Array{
         }
         return mult;
     }
-    protected static <E> Long multLong(E[] ar){
+    protected static  <E> Long multLong(E[] ar){
         Long[] temp = Arrays.copyOf(ar, ar.length,Long[].class);
         Long mult = temp[0];
         for (int i = 1; i < ar.length; i++) {

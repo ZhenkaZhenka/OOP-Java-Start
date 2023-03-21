@@ -1,8 +1,8 @@
-import org.jetbrains.annotations.NotNull;
+package Classes;
 
 import java.util.Arrays;
 
-public class Sum extends Array{
+public class SumOfElementsInArray extends Array{
     protected static Integer sumInt(Integer[] ar){
         Integer sum = ar[0];
         for (int i = 1; i < ar.length; i++) {
@@ -11,7 +11,7 @@ public class Sum extends Array{
         return sum;
     }
 
-    protected static <E> Double sumDouble(@NotNull E[] ar){
+    protected static <E> Double sumDouble(E[] ar){
         Double[] temp = Arrays.copyOf(ar, ar.length, Double[].class);
         Double sum = temp[0];
         for (int i = 1; i < temp.length; i++) {

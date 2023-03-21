@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import Classes.Array;
 
 public class ProgArray {
 
@@ -19,8 +19,10 @@ public class ProgArray {
         System.out.println(temp);
         Integer num = ar2.mult();
         System.out.println(num);
-        ar.print();
 
+        ar.print();
+        ar2.print();
+        ar2.choiseSort();
         ar2.print();
 
 
