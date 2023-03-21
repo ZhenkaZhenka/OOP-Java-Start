@@ -3,19 +3,22 @@ package Classes;
 import java.util.Arrays;
 
 public class Array<E> {
-    protected E[] array;
-    protected int size;
+    private E[] array;
+    private int size;
     private Object[] defaultEmptyArray = {};
 
+    /*Конструктор, не принимающий параметров, создает пустой массив*/
     public Array() {
         array = (E[]) defaultEmptyArray;
     }
 
+    /*Конструктор, принимающий массив произвольного типа данных в качестве параметра*/
     public Array(E[] col) {
         array = col;
         size = array.length;
     }
 
+    /*Добавление элемента в конец массива*/
     public void add(E obj) {
         int newSize = array.length + 1;
         E[] newArray;
@@ -25,6 +28,7 @@ public class Array<E> {
         size += 1;
     }
 
+    /*Удаление элемента по индексу*/
     public void delete(int index) {
         int counter = 0;
         int newSize = array.length - 1;
@@ -39,6 +43,7 @@ public class Array<E> {
         size -= 1;
     }
 
+    /*Удаление всех элементов, имеющий значение параметра*/
     public void delete(E obj) {
         for (int i = 0; i < array.length; i += 1) {
             if (array[i].equals(obj)) {
@@ -48,6 +53,7 @@ public class Array<E> {
         }
     }
 
+    /*Возвращает минимальное значение из массива*/
     public <E extends Comparable<E>> E min() {
         E min = (E) array[0];
         for (int i = 1; i < size; i++) {
@@ -58,6 +64,7 @@ public class Array<E> {
         return min;
     }
 
+    /*Возвращает максимальное значение из массива*/
     public <E extends Comparable<E>> E max() {
         E max = (E) array[0];
         for (int i = 1; i < size; i++) {
@@ -68,10 +75,12 @@ public class Array<E> {
         return max;
     }
 
+    /*Возвращает размер массива*/
     public int size() {
         return size;
     }
 
+    /*Возвращает индекс первого элемента с заданным значением*/
     public <E> int indexOf(E obj) {
         for (int i = 0; i < size; i++) {
             if (array[i].equals(obj)) {
@@ -81,6 +90,10 @@ public class Array<E> {
         return -1;
     }
 
+    /*Возращает булевое значениние нахождение элемента:
+    true-такой элемент находится в массиве,
+    false - такого элемента нет в массиве
+    * */
     public <E> boolean contain(E obj) {
         for (var item : array) {
             if (item.equals(obj)) {
@@ -90,6 +103,7 @@ public class Array<E> {
         return false;
     }
 
+    /*Печать массива на экран*/
     public void print() {
         for (var item : array) {
             System.out.print(item + " ");
@@ -97,10 +111,16 @@ public class Array<E> {
         System.out.println();
     }
 
+    /*Возвращает значение элемента с заданным индексом в массиве*/
     public <E> E valueOf(int index) {
         return (E) array[index];
     }
 
+    /* Возращает сумму всех элементов в массиве.
+    * Работает только с типами-наследниками Number,
+    * Считает сумму только для Integer, Long, Double, Float.
+    * На типы данных Byte, Short, Boolean выдает сообщение об отказе считать сумму(Исключение выводиться не будет)
+    */
     public <E extends Number> E sum() {
         if (array instanceof Byte[] ||
                 array instanceof Short[] ||
@@ -122,11 +142,16 @@ public class Array<E> {
         return null;
     }
 
+    /*Возращает произведение всех элементов в массиве.
+     *Работает только с типами-наследниками Number,
+     * Считает сумму только для Integer, Long, Double, Float.
+     * На типы данных Byte, Short, Boolean выдает сообщение об отказе считать сумму(Исключение выводиться не будет)
+    */
     public <E extends Number> E mult() {
         if (array instanceof Byte[] ||
                 array instanceof Short[] ||
                 array instanceof Boolean[]) {
-            System.out.println("This array has too short type to calculate it sum, you shouldn't do it ;)");
+            System.out.println("This array has too short type to calculate it multiplying, you shouldn't do it ;)");
         }
         if (array instanceof Integer[]) {
             return (E) MultOfArrayElements.multInt(array);
@@ -143,39 +168,44 @@ public class Array<E> {
         return null;
     }
 
+    /*Пузырьковая сортировка*/
     public <E extends Comparable<E>> void bubleSort() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
                 E t = (E) array[j];
-                if (t.compareTo((E) array[j + 1]) < 0) {
+                if (t.compareTo((E) array[j + 1]) > 0) {
                     swap(array, j, j + 1);
                 }
             }
         }
     }
 
+    /*Сортировка вставками*/
     public <E extends Comparable<E>> void insertSort() {
         for (int i = 1; i < size; i++) {
-            E t = (E)array[i];
-            for (int j = i; j > 0 && t.compareTo((E)array[j - 1]) > 0; j--) {
-                swap(array, j,j-1);
+            E t = (E) array[i];
+            for (int j = i; j > 0 && t.compareTo((E) array[j - 1]) < 0; j--) {
+                swap(array, j, j - 1);
             }
         }
     }
 
-    public <E extends Comparable<E>> void choiseSort(){
+    /*Сортировка выбором*/
+    public <E extends Comparable<E>> void choiseSort() {
         for (int i = 0; i < size; i++) {
             int indexMin = i;
-            for(int j = i + 1; j < size; j++) {
+            for (int j = i + 1; j < size; j++) {
                 E t = (E) array[indexMin];
                 if (t.compareTo((E) array[j]) > 0) {
                     indexMin = j;
                 }
             }
-            swap(array,i, indexMin);
+            swap(array, i, indexMin);
         }
     }
-    public static final <E> void swap(E[] ar, int i, int j) {
+
+    /*Просто метод для замены элементов в массиве, используется для сортровок*/
+    private static <E> void swap(E[] ar, int i, int j) {
         E t = ar[i];
         ar[i] = ar[j];
         ar[j] = t;
